@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  link: MyString
+  published: 2015-10-25 23:40:21
+  description: MyText
+  enc_url: MyString
+  category_id: 
+
+two:
+  title: MyString
+  link: MyString
+  published: 2015-10-25 23:40:21
+  description: MyText
+  enc_url: MyString
+  category_id: 
