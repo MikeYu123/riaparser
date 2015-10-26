@@ -29,6 +29,8 @@ gem 'better_errors'
 
 gem 'feedjira'
 
+gem 'whenever'
+#to be used
 gem 'sidekiq'
 #SSL issues on Windows
 gem 'certified'
