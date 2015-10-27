@@ -1,0 +1,26 @@
+%h1 All Articles
+%main
+  .nav_link
+    %a{href: '/my_feed'}
+      Show My Feed
+  .nav_link
+    %a{href: '/by_category'}
+      Browse by Category
+  %table
+    %thead
+      %th
+        Link
+      %th
+        Decription
+      %th
+        Category
+    %tbody
+      -@articles.each do |article|
+        %tr
+          %td
+            %a.article_link{href: "articles/#{article.id}"}
+              =article.title
+          %td
+            = article.description
+          %td
+            = article.category.name

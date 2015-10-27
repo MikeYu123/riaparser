@@ -1,0 +1,20 @@
+%main
+  .nav_link
+    %a{href: '/'}
+      View All News
+  .nav_link
+    %a{href: '/my_feed'}
+      Show My Feed
+  .nav_link
+    %a{href: '/by_category'}
+      Browse by Category
+  %ul.items#chosen_items
+    %h2 Your preferences:
+    - @categories_chosen.each do |cat|
+      %li
+        =cat
+  %ul.items#available_items
+    %h2 Categories available:
+    - @categories_available.each do |cat|
+      %li
+        =cat

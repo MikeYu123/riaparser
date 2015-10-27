@@ -25,12 +25,25 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
-gem 'better_errors'
+# haml views support
+gem 'haml'
+# auth routines
+gem 'devise'
 
+#debug tools
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+end
+
+# flexible rss-parsing
 gem 'feedjira'
 
+# screw the turbolinks
+gem 'jquery-turbolinks'
+# schedule for rake task
 gem 'whenever'
-#to be used
+#to be used - no :(
 gem 'sidekiq'
 #SSL issues on Windows
 gem 'certified'

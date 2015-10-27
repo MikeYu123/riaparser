@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  get 'users/edit_prefs', as: 'edit_prefs'
+
+  get 'articles/index'
+
+  get '/by_category/:category_id', to: 'articles#by_category'
+  get '/by_category/', to: 'articles#by_category'
+
+  get '/my_feed', to: 'articles#my_feed'
+
+  get 'articles/:id', to: 'articles#show'
+
+  post 'users/update_prefs', to: 'users#update_prefs'
+  devise_for :users
+  root to: 'articles#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -25,7 +39,6 @@ Rails.application.routes.draw do
   #       get 'sold'
   #     end
   #   end
-
   # Example resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales

@@ -1,0 +1,23 @@
+%main
+  .nav_link
+    %a{href: '/'}
+      View All News
+  .nav_link
+    %a{href: '/my_feed'}
+      Show My Feed
+  .nav_link
+    %a{href: '/by_category'}
+      Browse by Category
+  %h1 Article overview
+  %h2
+    =@article.title
+  %div
+    ="Published: #{@article.published}"
+  %div
+    ="Category: #{@article.category.name}"
+  %div
+    %img{src: @article.enc_url}
+  %div
+    =@article.description || ""
+  %div
+    =link_to "Original article", @article.link

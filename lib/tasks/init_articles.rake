@@ -1,6 +1,7 @@
 namespace :init_articles do
-  desc "inits all articles"
+  desc "Parsing news from feeds"
   task do_init: :environment do
+    #Enriching feedjira with category element
     class Feedjira::Parser::ITunesRSSItem
       element 'category', :as => :category
     end
@@ -19,8 +20,12 @@ namespace :init_articles do
     urls.each do |uri|
       begin
         feed = Feedjira::Feed.fetch_and_parse uri
-        #Grab data from entries
         feed.entries.each do |item|
+          #hook used to prevent same items parsing
+          if Article.find_by(link: item.url)
+            next
+          end
+        #Grab data from entries
           @article = Article.new
           @article.title = item.title
           @article.link = item.url

@@ -1,0 +1,16 @@
+// Place all the styles related to the articles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+// Some design stuff for tables
+table{
+  border-collapse: collapse;
+}
+td{
+  margin: 10px 0px;
+}
+tr{
+  border: 1px solid black;
+}
+tr:hover{
+  background-color: rgba(150,150,150,.1);
+}

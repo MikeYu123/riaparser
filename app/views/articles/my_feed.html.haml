@@ -1,0 +1,26 @@
+%h1 My Feed
+%main
+  .nav_link
+    %a{href: '/'}
+      View All News
+  .nav_link
+    %a{href: '/by_category'}
+      Browse by Category
+  %table
+    %thead
+      %th
+        Link
+      %th
+        Decription
+      %th
+        Category
+    %tbody
+      -@articles.each do |article|
+        %tr
+          %td
+            %a.article_link{href: article.link}
+              =article.title
+          %td
+            = article.description
+          %td
+            = article.category.name
